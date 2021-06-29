@@ -1,6 +1,7 @@
 package com.example.springboot.entity;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 @Entity
-@Table(name = "Employee")
+@Table(name = "employee")
 public class Employee {
     @Id
     // @GeneratedValue (strategy = GenerationType.AUTO)
@@ -79,7 +80,7 @@ public class Employee {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
