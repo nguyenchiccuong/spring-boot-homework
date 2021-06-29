@@ -31,7 +31,7 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "{employeeId}")
-    public Employee getEmployee(@PathVariable("employeeId") long employeeId) {
+    public Employee getEmployee(@PathVariable("employeeId") Long employeeId) {
         return employeeService.getEmployee(employeeId);
     }
 
@@ -41,7 +41,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping(path = "{employeeId}")
-    public void deleteEmployee(@PathVariable("employeeId") long employeeId) {
+    public void deleteEmployee(@PathVariable("employeeId") Long employeeId) {
         employeeService.deleteEmployee(employeeId);
     }
 
